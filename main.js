@@ -109,7 +109,7 @@ class Scene {
         const modelTail2 = multiplyMat4(modelTail1, balanco2Pivotado);
 
         const alturaCamera = ACOMPANHAMENTO_CAMERA * alturaPipa - DESLOCAMENTO_CAMERA_Y;
-        const camera = createLookAtMat4([0, alturaCamera, -1], [0, alturaCamera, 0], [0, 1, 0], true);
+        const camera = createLookAtMat4([0, alturaCamera, 1], [0, alturaCamera, 0], [0, 1, 0], true);
         const visaoProjecao = multiplyMat4(this.projecao, camera);
 
         this.uniformTriangle1.data.set(multiplyMat4(visaoProjecao, modelPipa));
