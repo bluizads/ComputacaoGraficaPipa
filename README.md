@@ -32,7 +32,7 @@ A origem do sistema do modelo é a **ponta inferior da pipa**, onde a cauda se p
 | `triangle1` (metade esquerda) | (0, 0), (−0.18, 0.45), (0, 0.7) | vermelho (1, 0, 0) |
 | `triangle2` (metade direita) | (0, 0), (0.18, 0.45), (0, 0.7) | amarelo (1, 1, 0) |
 
-As duas metades compartilham a aresta central (0, 0)–(0, 0.7) e formam juntas o losango clássico de uma pipa, com 0.36 de largura e 0.7 de altura.
+As duas metades compartilham a aresta central (0, 0)–(0, 0.7) e formam juntas o formato clássico de uma pipa, com 0.36 de largura e 0.7 de altura.
 
 ### Cauda (dois triângulos)
 
@@ -89,8 +89,8 @@ up  = (0, 1, 0)
 ```
 
 - **Acompanhamento parcial:** a câmera percorre só 50% (`ACOMPANHAMENTO_CAMERA = 0.5`) do deslocamento vertical da pipa. Assim a pipa se move ±0.4 no mundo e só ±0.2 na tela. A câmera suaviza o movimento, mas ele continua visível.
-- **Deslocamento fixo:** `DESLOCAMENTO_CAMERA_Y = −0.25` baixa a câmera para enquadrar pipa e cauda no campo de visão.
-- A câmera fica em z = +1 olhando para a origem, então a base da visão é `x = (1, 0, 0)`, `y = (0, 1, 0)`, `z = (0, 0, 1)`.
+- **Deslocamento fixo:** `DESLOCAMENTO_CAMERA_Y = 0.25` baixa a câmera para enquadrar pipa e cauda no campo de visão.
+- A câmera fica em `(0, y_cam(t), 1)` e olha para `(0, y_cam(t), 0)`.
 
 ## 4. Projeção ortográfica
 
@@ -148,5 +148,5 @@ O movimento é função do tempo real, e não do número de quadros, então a ve
 | `INCLINACAO_PIPA` | 0.18 rad | amplitude da rotação (≈ 10°) |
 | `OMEGA_ROTACAO` | 1.9 rad/s | frequência angular da rotação |
 | `ACOMPANHAMENTO_CAMERA` | 0.5 | fração do movimento vertical seguida pela câmera |
-| `DESLOCAMENTO_CAMERA_Y` | −0.25 | ajuste fixo de enquadramento da câmera |
+| `DESLOCAMENTO_CAMERA_Y` | 0.25 | ajuste fixo de enquadramento da câmera |
 | `JUNTA_CAUDA` | (0, −0.125, 0) | ponto de articulação entre as duas fitas |
